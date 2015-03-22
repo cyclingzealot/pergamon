@@ -1,0 +1,30 @@
+Scripts
+- Query: Un qui te demande si tu veux nettoyer à chaque heure que tu ouvre une nouvelle console
+- Maintainer: Un qui maintien la liste des fichiers qui exécute chaque année
+
+
+### Pour le script de maintainer ############################################################################################################################################################################################################
+
+trouveProfMax=FAUX
+pasTrouvePlus=FAUX
+
+lsMax = getconf ARG_MAX
+
+trouveDernierePasse=0
+profondeur=0
+facteur=1
+
+alorsQue(!trouveProfMax OU !pasTrouvePlus) 
+
+	fichierTrouve=`find -max-depth=$profondeur | wc -l`
+
+	si (TrouveDernierePasse > 0) 
+		facteur = fichiersTrouve / trouveDernierePasse
+
+	trouveProfMax = facteur * trouveDernierePasse > lsMAx
+
+	$profondeurr++
+
+
+# Faire la liste
+ls -rtd `find -maxdepth $profondeur` > $lsListe
