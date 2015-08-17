@@ -28,3 +28,22 @@ alorsQue(!trouveProfMax OU !pasTrouvePlus)
 
 # Faire la liste
 ls -rtd `find -maxdepth $profondeur` > $lsListe
+
+
+### Pour le script de query ###############################################################
+
+Prendre le premier fichier dans $lsListe
+
+Si dans ignorer, ou un substring du chemin est dans ignoer, allerf au prochain
+
+Demander si on l'efface?
+
+Si oui,
+	Effacer
+	Aller plus haut
+	Demander si on l'efface aussi
+
+Si non
+	Mettre dans ignoer
+	Aller plus haut
+	Demander si on l'ignore aussi

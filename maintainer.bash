@@ -44,14 +44,6 @@ echo Begin `date`  .....
 
 mkdir -p ~/.pergamon
 lsListe=~/.pergamon/filesByModificationDate
-trouveProfMax=0
-pasTrouvePlus=0
-
-lsMax=`getconf ARG_MAX`
-
-trouveDernierePasse=0
-profondeur=0
-facteur=1
 
 find ~ -printf '%T+ %p\n' | sort -r > $lsListe
 
